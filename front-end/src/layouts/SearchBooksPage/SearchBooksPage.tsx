@@ -3,6 +3,7 @@ import { BookModel } from "../../models/BookModel"
 import { Pagination } from "../Utils/Pagination";
 import { SpinnerLoading } from "../Utils/Spinner";
 import { SearchBook } from "./components/SearchBook";
+import React from "react";
 
 export const SearchBooksPage = () => {
     const [books, setBooks] = useState<BookModel[]>([]);
@@ -93,6 +94,7 @@ export const SearchBooksPage = () => {
             setSearchUrl(`/search/findByTitleContaining?title=${search}&page=0&size=${booksPerPage}`)
         }
         setCurrentPage(1)
+        setCategorySelection("All")
     }
 
     const categoryField = (value: string) => {
